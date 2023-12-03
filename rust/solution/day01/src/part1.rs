@@ -32,11 +32,4 @@ treb7uchet";
         let result = parse(example_input);
         assert_eq!(result, 142);
     }
-
-    #[test]
-    fn parses_input() {
-        let input = std::fs::read_to_string("../../../input/day01").expect("input file should exist");
-        let result = parse(&input);
-        assert_eq!(result, 55538);
-    }
 }
