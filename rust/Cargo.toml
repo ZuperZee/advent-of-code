@@ -1,0 +1,3 @@
+[workspace]
+members = ["solution/*"]
+resolver = "2"
