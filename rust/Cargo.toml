@@ -1,3 +1,6 @@
 [workspace]
 members = ["solution/*"]
 resolver = "2"
+
+[workspace.dependencies]
+criterion = "0.5"
