@@ -1,4 +1,4 @@
-use std::collections::{hash_map::Entry, HashMap};
+use std::collections::HashMap;
 
 pub fn parse(input: &str) -> u32 {
     let grid = input
@@ -10,15 +10,11 @@ pub fn parse(input: &str) -> u32 {
     let part_grid_numbers = get_part_grid_numbers(grid);
 
     let mut rows_grid_numbers: HashMap<usize, Vec<GridNumber>> = HashMap::new();
-    for grid_number in part_grid_numbers.clone() {
-        match rows_grid_numbers.entry(grid_number.row_nr) {
-            Entry::Occupied(mut occupied) => {
-                occupied.get_mut().push(grid_number);
-            }
-            Entry::Vacant(vacant) => {
-                vacant.insert(vec![grid_number]);
-            }
-        }
+    for grid_number in part_grid_numbers {
+        rows_grid_numbers
+            .entry(grid_number.row_nr)
+            .or_default()
+            .push(grid_number);
     }
 
     let mut gear_ratios: Vec<u32> = vec![];
