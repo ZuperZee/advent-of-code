@@ -3,7 +3,7 @@ use std::time::SystemTime;
 use day02::*;
 
 fn main() {
-    let input = std::fs::read_to_string("../input/day02").expect("input file should exist");
+    let input = std::fs::read_to_string("../input/day02.txt").expect("input file should exist");
 
     let now = SystemTime::now();
     let result = part1::parse(&input);

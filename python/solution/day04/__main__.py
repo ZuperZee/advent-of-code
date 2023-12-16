@@ -3,7 +3,7 @@ import time
 import part1
 import part2
 
-with open("../input/day04", "r") as f:
+with open("../input/day04.txt", "r") as f:
     input = f.read()
 
 start = time.time()
